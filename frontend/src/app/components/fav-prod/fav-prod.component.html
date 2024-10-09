@@ -1,0 +1,46 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<a>Hi, {{username}}</a>
+<ul>
+    <li *ngFor="let product of products">
+        <a>
+            <div class="image">
+                <img [src]="product.imageurl || 'assets/nophoto.jpg'" alt="Product Image">
+            </div>
+            <div class="content">
+                
+                <div class="name">
+                    {{product.name}}
+                </div>
+                
+                <div class="description">
+                    {{product.description}}
+                </div>
+                
+                
+                <button class="btn" (click)="removeFromFavourite(product, username)">
+                    <i class="fa fa-heart" [ngClass]="{ 'favorite': product.favourite }"></i>
+                    <span>❌</span>
+                  </button>
+                  
+
+
+                <div class="tags">
+                    <span *ngFor="let tag of product.tags">
+                        {{tag}}
+                    </span>
+                </div>
+                <div class="price">
+                    <span>
+                        {{product.price|currency}}
+                    </span>
+                </div>
+
+
+
+            </div>
+        </a>
+    </li>
+</ul> 
+
+

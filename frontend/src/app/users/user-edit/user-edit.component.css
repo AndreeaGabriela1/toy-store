@@ -1,0 +1,53 @@
+/* Style for form container */
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    background-color: white;
+  }
+  
+  /* Style for form fields */
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form textarea {
+    width: calc(100% - 130px);
+    padding: 8px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+  }
+  
+  form textarea {
+    height: 100px;
+  }
+  
+  /* Style for submit button */
+  form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Disable styles for disabled button */
+  form button[type="submit"]:disabled {
+    background-color: gainsboro;
+    cursor: not-allowed;
+  }
+  
+  img {
+    width: 200px;
+    height: auto;
+}

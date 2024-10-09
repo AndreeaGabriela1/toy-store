@@ -1,0 +1,63 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<a>Hi, {{username}}</a>
+<ul>
+    <li *ngFor="let product of products">
+        <a>
+
+            <a [routerLink]="['/product-details', product.id, username]">
+                <div class="image">
+                    <img class="product-image" [src]="product.imageurl || 'assets/nophoto.jpg'" alt="Product Image">
+                </div>
+            </a>
+            <div class="content">
+
+                    <div class="name">
+                        {{product.name}}
+                    </div>
+                    
+                    <div class="description">
+                        {{product.description}}
+                    </div>
+                
+                <!-- <span class="favorite {{product.favorite ? 'active' : 'inactive'}}" (click)="toggleFavorite(product)">
+                    ❤
+                </span> -->
+                
+                <button class="btn" (click)="toggleFavorite(product, username)">
+                    <i class="fa fa-heart" [ngClass]="{ 'favorite': product.favourite }"></i>
+                    <span>{{ product.favourite ? '💖' : '❤' }}</span>
+                </button>
+                  
+
+
+                <div class="tags">
+                    <span *ngFor="let tag of product.tags">
+                        {{tag}}
+                    </span>
+                </div>
+                <div class="price">
+                    <span>
+                        {{product.price|currency}}
+                    </span>
+                </div>
+
+
+                <div class="buttons">
+                    <a>
+                        <button type="button" (click)="addToCart(product, username)">Add To Cart</button>
+                    </a>
+
+                    <a>
+
+                        <button type="button" (click)="navigateToReviewForm(product, username)">Leave Review</button>
+                    </a>
+
+                </div>
+
+            </div>
+        </a>
+    </li>
+</ul> 
+
+

@@ -1,0 +1,107 @@
+<header class="app-header">
+	    <div class="container">
+            <img src="assets/logo.png" alt="Logo">
+            <a href="#" routerLink="/" class="logo">
+
+                {{pageTitle}}
+            </a>
+            <nav>
+                <ul class="menu">
+
+                    <div class="authenticated" *ngIf="authenticated">
+
+                        <div *ngIf="roles.includes('ADMIN')">
+                            <div class="dropdown-user">
+                                <li class="dropdown">
+                                    <a href="#" class="dropbtn">Users</a>
+                                    <div class="dropdown-content">
+                                        <a href="#" routerLink="/user">Users</a>
+                                        <a href="#" routerLink="/user-delete">Modify</a>
+                                        <a href="#" routerLink="/login-activity">Login Activity</a>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+
+                        <div *ngIf="roles.includes('CUSTOMER')">
+                            <div class="dropdown-product">
+                                <li class="dropdown">
+                                    <a href="#" class="dropbtn">Products</a>
+                                    <div class="dropdown-content" >
+                                        <div  *ngIf="loggedUser">
+                                            <a href="#" [routerLink]="['/product', { user: loggedUser.username }]" routerLinkActive="active">Shop</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+
+
+                            <div class="right-buttons" *ngIf="loggedUser">
+                                <div class="cart">
+                                    <li class>    
+                                        <a href="#" [routerLink]="['/cart-product', { user: loggedUser.username }]" routerLinkActive="active">🛒</a>
+                                    </li>
+                                </div> 
+        
+                                <div class="dropdown-user">
+                                    <li class="dropdown">
+                                        <a href="#" [routerLink]="['/logged', { user: loggedUser.username }]" routerLinkActive="active">👤</a>
+                                        <div class="dropdown-content">
+                                            <a href="#" [routerLink]="['/fav-prod', { user: loggedUser.username }]" routerLinkActive="active">❤️</a>
+                                            <a href="#" [routerLink]="['/friends', loggedUser.id]" routerLinkActive="active">💬</a>
+                                        </div>
+                                    </li>
+                                </div>
+                            </div>  
+
+                        </div>
+
+                        <div *ngIf="roles.includes('SELLER')">
+                            <div class="dropdown-product">
+                                <li class="dropdown">
+                                    <a href="#" class="dropbtn">Products</a>
+                                    <div class="dropdown-content" >
+                                        <a href="#" routerLink="/product-create">Create</a>
+                                        <div  *ngIf="loggedUser">
+                                            <a href="#" [routerLink]="['/product', { user: loggedUser.username }]" routerLinkActive="active">Shop</a>
+                                        </div>
+                                        <a href="#" routerLink="/product-delete">Modify</a>
+                                    </div>
+                                </li>
+                            </div>
+
+                        </div>
+
+
+                        <div *ngIf="roles.includes('FOSTER')">
+                            <div class="dropdown-pet">
+                                <li class="dropdown">
+                                    <a href="#" class="dropbtn">Pets</a>
+                                    <div class="dropdown-content">
+                                        <div *ngIf="loggedUser">
+                                            <a href="#" [routerLink]="['/pet', { loggedUser: loggedUser }]" routerLinkActive="active">Pets</a>
+                                            <a href="#" routerLink="/pet-create">Create</a>  
+                                            <a href="#" routerLink="/pet-delete">Modify</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+
+
+                        <div class="logout">
+                            <button type="button" class="logout-button" (click)="logoutRequest()">Logout</button>
+                        </div>
+
+
+                        <!-- <button class="btn" (click)="toggleFavorite(product, username)">
+                            <i class="fa fa-heart" [ngClass]="{ 'favorite': product.favourite }"></i>
+                            <span>{{ product.favourite ? '💖' : '❤' }}</span>
+                        </button> -->
+
+
+                    </div>
+                </ul>
+            </nav>
+        </div>
+</header>

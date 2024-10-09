@@ -1,0 +1,36 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logged-form {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.user-details {
+  padding: 10px;
+}
+
+.username, .name, .email {
+  margin-bottom: 10px;
+}
+
+.roles {
+  margin-top: 10px;
+}
+
+.role {
+  margin-bottom: 5px;
+}

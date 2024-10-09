@@ -1,0 +1,15 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<form (ngSubmit)="editCategory(category)" #categoryForm="ngForm">
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="editedCategory.name" required>
+    </div>
+    <div>
+      <label for="imageUrl">Image URL:</label>
+      <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="editedCategory.imageUrl">
+    </div>
+    <button type="submit" [disabled]="categoryForm.invalid" (click)="editCategory(category)">Edit Category</button>
+  
+  </form>

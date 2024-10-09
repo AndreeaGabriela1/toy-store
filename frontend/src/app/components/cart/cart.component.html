@@ -1,0 +1,26 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<ul class="products">
+    <li *ngFor="let product of products" class="product">
+        <a>
+            <div class="image">
+                <img [src]="product.imageurl || 'assets/nophoto.jpg'" alt="Product Image">
+            </div>
+            <div class="content">
+                <div class="name">{{product.name}}</div>
+                <div class="price">{{product.price | currency}}</div>
+            </div>
+        </a>
+    </li>
+</ul>
+<div class="button-container">
+    <ng-container *ngIf="activateBuy">
+        <button type="button" (click)="buyProducts(username)">Buy Products</button>
+    </ng-container>
+</div>
+
+<div class="button-container">
+    <ng-container *ngIf="activateReceipt">
+        <button type="button" (click)="redirectReceipt(receipt)">Receipt</button>
+    </ng-container>
+</div>

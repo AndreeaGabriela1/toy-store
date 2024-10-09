@@ -1,0 +1,42 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<!-- product-details.component.html -->
+
+<div class="product-details-container">
+    <!-- Product Details -->
+    <div class="product-details">
+      <h2>{{ product.name }}</h2>
+      <img [src]="product.imageurl || 'assets/nophoto.jpg'" alt="Product Image" class="product-image">
+      <p class="description">{{ product.description }}</p>
+      <p class="price">Price: {{ product.price | currency }}</p>
+
+      <div class="buttons">
+        <a>
+            <button type="button" (click)="addToCart(product, username)">Add To Cart</button>
+        </a>
+
+        <a>
+
+            <button type="button" (click)="navigateToReviewForm(product, username)">Leave Review</button>
+        </a>
+
+    </div>
+    
+    </div>
+  
+    <!-- Product Reviews -->
+    <div class="product-reviews">
+      <h3>Reviews</h3>
+      <ul>
+        <li *ngFor="let review of reviews" class="review">
+          <div class="review-header">
+            <h4>{{ review.title }}</h4>
+            <div class="stars" [innerHTML]="getStarIcons(review.stars)"></div>
+          </div>
+          <p class="review-description">{{ review.description }}</p>
+          <p class="username">Says: {{ review.username }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

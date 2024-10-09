@@ -1,0 +1,86 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<form class="date-form" (ngSubmit)="submitForm()">
+    <div class="input-group">
+      <div class="input-item">
+        <label for="start-year">Start Year</label>
+        <input class="form-control" type="number" id="start-year" name="start-year" [(ngModel)]="startYear" placeholder="YYYY" min="1900" max="2100" required>
+      </div>
+      <div class="input-item">
+        <label for="start-month">Start Month</label>
+        <input class="form-control" type="number" id="start-month" name="start-month" [(ngModel)]="startMonth" placeholder="MM" min="1" max="12" required>
+      </div>
+      <div class="input-item">
+        <label for="start-day">Start Day</label>
+        <input class="form-control" type="number" id="start-day" name="start-day" [(ngModel)]="startDay" placeholder="DD" min="1" max="31" required>
+      </div>
+      <div class="input-item">
+        <label for="start-hour">Start Hour</label>
+        <input class="form-control" type="number" id="start-hour" name="start-hour" [(ngModel)]="startHour" placeholder="HH" min="0" max="23" required>
+      </div>
+      <div class="input-item">
+        <label for="start-minute">Start Minute</label>
+        <input class="form-control" type="number" id="start-minute" name="start-minute" [(ngModel)]="startMinute" placeholder="MM" min="0" max="59">
+      </div>
+      <div class="input-item">
+        <label for="start-second">Start Second</label>
+        <input class="form-control" type="number" id="start-second" name="start-second" [(ngModel)]="startSecond" placeholder="SS" min="0" max="59">
+      </div>
+    </div>
+  
+    <!-- <div class="input-group">
+      <div class="input-item">
+        <label for="end-year">End Year</label>
+        <input class="form-control" type="number" id="end-year" name="end-year" [(ngModel)]="endYear" placeholder="YYYY" min="1900" max="2100" required>
+      </div>
+      <div class="input-item">
+        <label for="end-month">End Month</label>
+        <input class="form-control" type="number" id="end-month" name="end-month" [(ngModel)]="endMonth" placeholder="MM" min="1" max="12" required>
+      </div>
+      <div class="input-item">
+        <label for="end-day">End Day</label>
+        <input class="form-control" type="number" id="end-day" name="end-day" [(ngModel)]="endDay" placeholder="DD" min="1" max="31" required>
+      </div>
+      <div class="input-item">
+        <label for="end-hour">End Hour</label>
+        <input class="form-control" type="number" id="end-hour" name="end-hour" [(ngModel)]="endHour" placeholder="HH" min="0" max="23" required>
+      </div>
+      <div class="input-item">
+        <label for="end-minute">End Minute</label>
+        <input class="form-control" type="number" id="end-minute" name="end-minute" [(ngModel)]="endMinute" placeholder="MM" min="0" max="59">
+      </div>
+      <div class="input-item">
+        <label for="end-second">End Second</label>
+        <input class="form-control" type="number" id="end-second" name="end-second" [(ngModel)]="endSecond" placeholder="SS" min="0" max="59">
+      </div>
+    </div> -->
+  
+    <div class="submit-button-container">
+      <button class="submit-button" type="submit">Submit</button>
+    </div>
+  </form>
+  
+  
+<ul>
+    <li *ngFor="let user of someUsers">
+        <a>
+            <div class="image">
+                <img [src]="user.imageurl || 'assets/nophoto.jpg'" alt="User Image">
+            </div>
+            <div class="content">
+                
+                <div class="firstName">
+                    {{user.firstName}}
+                </div>
+                <div class="lastName">
+                    {{user.lastName}}
+                </div>
+                
+                <div class="username">
+                    {{user.username}}
+                </div>
+                
+            </div>
+        </a>
+    </li>
+</ul> 

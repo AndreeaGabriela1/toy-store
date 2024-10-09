@@ -1,0 +1,86 @@
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a {
+    height: 28rem;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: purple;
+}
+
+li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.content {
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.favorite.not {
+    color: gray;
+}
+
+.tags {
+    flex: 9;
+}
+
+.tags span {
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: grey;
+    margin-right: 0.3rem; /* added missing unit */
+}
+
+.firstName,
+.lastName,
+.username{
+    border-radius: 5rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: grey;
+    margin-right: 0.3rem; /* added missing unit */
+    padding: 0.5rem 1rem; /* added padding to give space */
+}
+
+
+.last-login,
+.last-logout {
+    color: purple;
+    font-weight: bold; 
+    font-size: smaller;
+}
+
+.status {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}

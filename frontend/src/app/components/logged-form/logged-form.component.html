@@ -1,0 +1,36 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'" [loggedUser]="loggedUser"></app-header>
+
+<div class="container">
+  <div class="welcome-message">
+    <p>Welcome, {{ loggedUser.firstName }}!</p>
+  </div>
+
+  <div class="logged-form">
+    <div class="user-info">
+      <h2>About Me</h2>
+      <div class="user-details">
+        <p class="username">Username: {{ loggedUser.username }}</p>
+        <p class="name">Name: {{ loggedUser.firstName }} {{ loggedUser.lastName }}</p>
+        <p class="email">Email: {{ loggedUser.email_address }}</p>
+        <div class="roles">
+          <p class="role" *ngFor="let role of loggedUser.roles">Role: {{ role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <button (click)="toggleFields()">Add Fields</button>
+  <div *ngIf="showFields">
+    <input type="text" [(ngModel)]="id1" placeholder="Field 1">
+    <input type="text" [(ngModel)]="id2" placeholder="Field 2">
+    <button (click)="submitFields()">Submit</button>
+  </div>
+
+  <div *ngIf="showStartChat">
+    <input type="text" [(ngModel)]="id2" placeholder="roomId">
+    <button (click)="startChatting()">Start chatting</button>
+  </div>
+
+</div>

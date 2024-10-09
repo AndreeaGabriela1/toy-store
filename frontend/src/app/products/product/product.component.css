@@ -1,0 +1,97 @@
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a {
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: purple;
+    text-decoration: none; /* Ensure anchor tags don't have underline */
+}
+
+ul li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.image {
+    flex: 1; /* Ensure image takes up the appropriate space */
+    display: flex;
+    justify-content: center;
+}
+
+.product-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    max-height: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.content {
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.tags {
+    flex: 1; /* Ensure tags take up appropriate space */
+}
+
+.tags span {
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: grey;
+    margin-right: 0.3rem; /* Add missing unit */
+}
+
+.buttons {
+    display: flex;
+    margin-top: 0.5rem; /* Add spacing between content and buttons */
+}
+
+.buttons a {
+    margin-right: 0.5rem;
+}
+
+.buttons button {
+    background-color: purple;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: purple;
+}
+
+.favorite-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}

@@ -1,0 +1,29 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<ul>
+    <li *ngFor="let user of users">
+        <a>
+            <div class="image">
+                <img [src]="user.imageurl || 'assets/nophoto.jpg'" alt="User Image">
+            </div>
+            <div class="content">
+                <div class="status">
+                    {{status(user.loginTime, user.logoutTime)}}
+                </div>
+                <div class="firstName">
+                    {{ user.firstName }}
+                </div>
+                <div class="lastName">
+                    {{ user.lastName }}
+                </div>
+                <div class="username">
+                    {{ user.username }}
+                </div>
+ 
+                <div class="login last-login">Last login: {{ formatDate(user.loginTime) }}</div>
+                <div class="logout last-logout">Last logout: {{ formatDate(user.logoutTime) }}</div>
+
+            </div>
+        </a>
+    </li>
+</ul>

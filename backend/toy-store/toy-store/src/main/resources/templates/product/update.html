@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+
+<h1>Update Products</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Product Name</th>
+    </tr>
+    </thead>
+    <tr th:each="product : ${products}">
+        <td><a th:href="'/products/update-details?id=' + ${product.id}" th:text="${product.name}"></a> </td>
+    </tr>
+</table>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

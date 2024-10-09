@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+
+<h1>Create Category</h1>
+
+
+<form th:action="@{/categories/create}" method="post" th:object="${category}" class="px-4">
+
+    <div class="mb-3 row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text"  id="name" autofocus="autofocus"
+                   class="form-control" required name="name" th:field="*{name}" >
+        </div>
+    </div>
+
+
+    <!--    <div class="mb-3 row">
+            <label for="category" class="col-sm-2 col-form-label">Weight</label>
+            <div class="col-sm-6">
+                <input type="text"  id="category" autofocus="autofocus"
+                       class="form-control" required name="category" th:field="*{category}" >
+            </div>
+        </div>-->
+
+    <!--    <div class="mb-3 row">
+            <label>Category Type
+                <select th:field="${category.categoryType}">
+                    <option th:each="category_type : ${categoryTypes}"
+                            th:value="${category_type.id}"
+                            th:text="${category_type.name}"
+                    ></option>
+                    <p class="error" th:errors="${category.categoryType}"></p>
+                </select>
+            </label>
+        </div>-->
+
+    <div>
+        <button type="submit" class="btn btn-success">Create Category</button>
+    </div>
+</form>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

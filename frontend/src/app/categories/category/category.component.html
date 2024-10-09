@@ -1,0 +1,18 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<ul>
+    <li *ngFor="let category of categories">
+        <a>
+            <div class="image">
+                <img [src]="category.imageUrl || 'assets/nophoto.jpg'" alt="Pet Image">
+            </div>
+            <div class="content">
+                
+                <div class="name">
+                    {{category.name}}
+                </div>
+                
+            </div>
+        </a>
+    </li>
+</ul> 

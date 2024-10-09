@@ -1,0 +1,91 @@
+/* product-details.component.css */
+
+.product-details-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .product-details {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .product-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: purple;
+  }
+  
+  .product-reviews {
+    width: 45%;
+  }
+  
+  .review {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .stars {
+    display: flex;
+  }
+  .star-icon {
+    font-size: 20px;
+    color: gold;
+  }
+  
+  .review-description {
+    margin-bottom: 10px;
+  }
+  
+  .username {
+    font-style: italic;
+  }
+  
+
+  .buttons {
+    display: flex;
+    margin-top: 0.5rem; /* Add spacing between content and buttons */
+}
+
+.buttons a {
+    margin-right: 0.5rem;
+}
+
+.buttons button {
+    background-color: purple;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: purple;
+}

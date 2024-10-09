@@ -1,0 +1,50 @@
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem;
+}
+
+li a {
+    height: 22rem;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: purple;
+    text-decoration: none; /* Add this to remove default link underline */
+}
+
+li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Adjust margin as needed */
+}
+
+.button-container button {
+    background-color: purple;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.button-container button:hover {
+    background-color: white;
+    color: purple;
+}

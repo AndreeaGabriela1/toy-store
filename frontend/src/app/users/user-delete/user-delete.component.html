@@ -1,0 +1,39 @@
+<ul>
+    <li *ngFor="let user of users">
+        <a>
+            <div class="image">
+                <img [src]="user.imageurl || 'assets/nophoto.jpg'" alt="User Image">
+            </div>
+            <div class="content">
+            
+                <div class="name">
+                    {{user.firstName}}
+                </div>
+
+                <div class="name">
+                    {{user.lastName}}
+                </div>
+                
+                <div class="username">
+                    {{user.username}}
+                </div>
+
+                <div class="email">
+                    {{user.email_address}}
+                </div>
+                
+                <div class="buttons">
+                    <a>
+                        <button type="button" (click)="editUser(user)">Edit</button>
+                    </a>
+                    <a>
+                     <button type="button" (click)="deleteUser(user)">Delete</button>
+                   </a>
+                </div>
+
+            </div>
+        </a>
+    </li>
+</ul> 
+
+

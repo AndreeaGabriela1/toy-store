@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+
+<h1>Update Categories</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Category Name</th>
+    </tr>
+    </thead>
+    <tr th:each="category : ${categories}">
+        <td><a th:href="'/categories/update-details?id=' + ${category.id}" th:text="${category.name}"></a> </td>
+    </tr>
+</table>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

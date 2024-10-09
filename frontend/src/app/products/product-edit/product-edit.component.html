@@ -1,0 +1,22 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<form (ngSubmit)="editProduct(product)" #productForm="ngForm">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="editedProduct.name" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="editedProduct.description" required></textarea>
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" [(ngModel)]="editedProduct.price">
+    </div>
+    <div>
+      <label for="imageurl">Image URL:</label>
+      <input type="text" id="imageurl" name="imageurl" [(ngModel)]="editedProduct.imageurl">
+    </div>
+    <button type="submit" [disabled]="productForm.invalid" (click)="editProduct(product)">Edit Product</button>
+  
+  </form>

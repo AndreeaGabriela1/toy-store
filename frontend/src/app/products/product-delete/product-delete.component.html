@@ -1,0 +1,48 @@
+<app-header [pageTitle]="'ToyStore'" [logoSrc]="'assets/logo.png'"></app-header>
+
+<ul>
+    <li *ngFor="let product of products">
+        <a>
+            <div class="image">
+                <img class="product-image" [src]="product.imageurl || 'assets/nophoto.jpg'" alt="Product Image">
+            </div>
+            <div class="content">
+                
+                <div class="name">
+                    {{product.name}}
+                </div>
+                
+                <div class="description">
+                    {{product.description}}
+                </div>
+                
+                <span class="favorite {{product.favourite?'':'not'}}">
+                    ❤
+                </span>
+
+                <div class="tags">
+                    <span *ngFor="let tag of product.tags">
+                        {{tag}}
+                    </span>
+                </div>
+                <div class="price">
+                    <span>
+                        {{product.price|currency}}
+                    </span>
+                </div>
+
+                <div class="buttons">
+                    <a>
+                        <button type="button" (click)="editProduct(product)">Edit</button>
+                    </a>
+                    <a>
+                        <button type="button" (click)="deleteProduct(product)">Delete</button>
+                   </a>
+                </div>
+
+            </div>
+        </a>
+    </li>
+</ul> 
+
+

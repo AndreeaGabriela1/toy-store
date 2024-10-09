@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+
+<h1>Delete Categories</h1>
+
+<form  th:action="@{/categories/delete}" method="post" th:object="${categories}" class="px-4">
+
+    <th:block th:each="category : ${categories}">
+        <div class="form-group">
+            <label>
+                <span th:text="${category.name}"></span>
+                <input type="checkbox" name="id" th:value="${category.id}" class="form-control">
+            </label>
+
+        </div>
+    </th:block>
+
+    <input type="submit" value="Delete" class="btn btn-danger">
+
+</form>
+
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

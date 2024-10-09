@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+
+<h1>Update Product</h1>
+
+
+<form  th:action="@{/products/update-details}" method="post" th:object="${product}" class="px-4">
+
+    <div hidden class="mb-3 row invisible">
+        <label  for="id" class="col-sm-2 col-form-label ">Id</label>
+        <div  class="col-sm-6">
+            <input type="text" id="id" autofocus="autofocus"
+                   class="form-control" required  name="id" th:field="*{id}" readonly>
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" id="name" autofocus="autofocus"
+                   class="form-control" required  name="name" th:field="*{name}">
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-6">
+            <input type="text"  id="description" autofocus="autofocus"
+                   class="form-control" required name="description" th:field="*{description}" >
+        </div>
+    </div>
+
+    <!--    <div class="mb-3 row">-->
+    <!--        <label>Product Type-->
+    <!--            <select th:field="${product.productType}">-->
+    <!--                <option th:each="product_type : ${productTypes}"-->
+    <!--                        th:value="${product_type.id}"-->
+    <!--                        th:text="${product_type.name}"-->
+    <!--                ></option>-->
+    <!--            </select>-->
+    <!--        </label>-->
+    <!--    </div>-->
+
+    <div class="mb-3 row">
+        <label>Category
+            <select th:field="${product.category}">
+                <option th:each="category : ${categories}"
+                        th:value="${category.id}"
+                        th:text="${category.name}"
+                ></option>
+                <p class="error" th:errors="${product.category}"></p>
+            </select>
+        </label>
+    </div>
+
+
+    <div>
+        <button type="submit" class="btn btn-success">Edit Product</button>
+    </div>
+</form>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<div class="receipt">
+    <div class="header">
+      <h1>Receipt</h1>
+      <p>Date: {{ receipt.date }}</p>
+    </div>
+    <div class="customer-info">
+      <h2>Customer Information</h2>
+      <p>Name: {{ receipt.firstName }} {{ receipt.lastName }}</p>
+      <p>Username: {{ receipt.username }}</p>
+    </div>
+    <div class="products">
+      <h2>Products Purchased</h2>
+      <ul>
+        <li *ngFor="let product of receipt.boughtProducts">
+          <span>{{ product }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
