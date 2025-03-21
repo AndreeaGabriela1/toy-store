@@ -1,7 +1,7 @@
 Toy-Store 🎁🛒
 Toy-Store is a full-stack web application designed to efficiently manage a toy store, offering specific functionalities tailored for three types of users: customers, employees, and administrators. The application is built with a robust Java Spring Boot backend and uses a MySQL relational database for data storage.
 
-Key Features 🚀
+Key Features 🚀  
 User authentication & registration system with role-based interfaces (Customer, Employee, Admin).
 Customers: can view the list of available toys (including name, category, price, availability, age range).
 Employees: can perform CRUD (Create, Read, Update, Delete) operations on toys.
